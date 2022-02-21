@@ -112,42 +112,9 @@ itemsSlide[activeElement].classList.add('active');
 
 // ascoltare l'evento click
 
-arrowDown.addEventListener('click', function() {
-    
-    if (activeElement < itemsSlide.length - 1) {
+arrowDown.addEventListener('click', incremetaSlide);
 
-        // rimuovere la classe active 
-        itemsSlide[activeElement].classList.remove('active');
-        previewSlide[activeElement].classList.remove('active');
-    
-        // incrementare il contatore o diminuire
-        activeElement++
-    
-        // aggiungere la classe active
-        itemsSlide[activeElement].classList.add('active');
-        previewSlide[activeElement].classList.add('active');
-
-    }
-
-})
-
-arrowUp.addEventListener('click', function() {
-
-    if (activeElement > 0 ) {
-
-        // rimuovere la classe active 
-        itemsSlide[activeElement].classList.remove('active');
-        previewSlide[activeElement].classList.remove('active');
-
-        // incrementare il contatore o diminuire
-        activeElement--
-        
-        // aggiungere la classe active
-        itemsSlide[activeElement].classList.add('active');
-        previewSlide[activeElement].classList.add('active');
-    }
-
-})
+arrowUp.addEventListener('click', decrementaSlide);
 
 // setto il ciclo per le preview slides
 
@@ -162,8 +129,7 @@ for (let i = 0; i < previewSlide.length; i++) {
 
         // tolgo active al preview
 
-        itemsSlide[activeElement].classList.remove('active');
-        previewSlide[activeElement].classList.remove('active');
+        removeActive(itemsSlide, [activeElement], previewSlide);
 
         // setto contatore 
 
@@ -171,11 +137,52 @@ for (let i = 0; i < previewSlide.length; i++) {
 
         // aggiungo active
 
-        itemsSlide[activeElement].classList.add('active');
-        previewSlide[activeElement].classList.add('active');
+        addActive(itemsSlide, [activeElement], previewSlide);
 
     })
     
 }
 
+function incremetaSlide() {
 
+    if (activeElement < itemsSlide.length - 1) {
+
+        // rimuovere la classe active 
+        removeActive(itemsSlide, [activeElement], previewSlide);
+    
+        // incrementare il contatore o diminuire
+        activeElement++
+    
+        // aggiungere la classe active
+        addActive(itemsSlide, [activeElement], previewSlide);
+
+    }
+
+}
+
+function decrementaSlide () {
+
+    if (activeElement > 0 ) {
+
+        // rimuovere la classe active 
+        removeActive(itemsSlide, [activeElement], previewSlide);
+        // incrementare il contatore o diminuire
+        activeElement--
+        
+        // aggiungere la classe active
+        addActive(itemsSlide, [activeElement], previewSlide);
+    }
+
+}
+
+function addActive (itemsSlide, activeElement, previewSlide) {
+
+    itemsSlide[activeElement].classList.add('active');
+    previewSlide[activeElement].classList.add('active');
+}
+
+function removeActive (itemsSlide, activeElement, previewSlide) {
+
+    itemsSlide[activeElement].classList.remove('active');
+    previewSlide[activeElement].classList.remove('active');
+}
