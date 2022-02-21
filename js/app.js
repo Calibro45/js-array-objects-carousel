@@ -116,30 +116,38 @@ arrowDown.addEventListener('click', incremetaSlide);
 
 arrowUp.addEventListener('click', decrementaSlide);
 
+slider.addEventListener('click',slideCallBack);
+
 // setto il ciclo per le preview slides
 
-for (let i = 0; i < previewSlide.length; i++) {
+// for (let i = 0; i < previewSlide.length; i++) {
 
-    const controls = previewSlide[i];
-    //console.log(controls);
+//     const controls = previewSlide[i];
+//     //console.log(controls);
 
-    // aggiungo event listener per le preview 
+//     // aggiungo event listener per le preview 
 
-    controls.addEventListener('click', function() {
+//     controls.addEventListener('click', function() {
 
-        // tolgo active al preview
+//         // tolgo active al preview
 
-        removeActive(itemsSlide, [activeElement], previewSlide);
+//         removeActive(itemsSlide, [activeElement], previewSlide);
 
-        // setto contatore 
+//         // setto contatore 
 
-        activeElement = i
+//         activeElement = i
 
-        // aggiungo active
+//         // aggiungo active
 
-        addActive(itemsSlide, [activeElement], previewSlide);
+//         addActive(itemsSlide, [activeElement], previewSlide);
 
-    })
+//     })
+    
+// }
+
+function slideCallBack (event) {
+
+    console.log(event.target.closest('.controls'));
     
 }
 
