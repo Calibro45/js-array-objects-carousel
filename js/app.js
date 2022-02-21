@@ -77,49 +77,63 @@ const arrowDown = document.getElementsByClassName('arrow-down')[0];
 
 let activeElement = 0;
 
+slideObject.forEach((elememt) => {
+
+    const slideContent = elememt;
+    console.log(slideContent);
+})
+
+function sliderItem ( {immagine, titolo, descrizione} ) {
+
+}
+
+
+
 // creo il ciclo per le immagini del carusel
 
-for (let i = 0; i < items.length; i++) {
 
-    //console.log(title[i]);
 
-    // creo elementi che andranno nel DOM 
+// for (let i = 0; i < items.length; i++) {
 
-    const item = document.createElement('div');
-    //console.log(item);
-    const img = document.createElement('img');
-    //console.log(img);
-    const descWrap = document.createElement('div');
-    //console.log(descWrap);
-    const imgTitle = `<h3 class="title">${title[i]}</h3>`;
-    //console.log(imgTitle);
-    const imgText = `<p class="subtitle">${text[i]}</p>`;
-    //console.log(imgText);
-    const li = document.createElement('li');
-    //console.log(li);
-    const imgControl = document.createElement('img');
+//     //console.log(title[i]);
+
+//     // creo elementi che andranno nel DOM 
+
+//     const item = document.createElement('div');
+//     //console.log(item);
+//     const img = document.createElement('img');
+//     //console.log(img);
+//     const descWrap = document.createElement('div');
+//     //console.log(descWrap);
+//     const imgTitle = `<h3 class="title">${title[i]}</h3>`;
+//     //console.log(imgTitle);
+//     const imgText = `<p class="subtitle">${text[i]}</p>`;
+//     //console.log(imgText);
+//     const li = document.createElement('li');
+//     //console.log(li);
+//     const imgControl = document.createElement('img');
     
-    // src img
+//     // src img
 
-    img.src = items[i];
-    imgControl.src =items[i];
+//     img.src = items[i];
+//     imgControl.src =items[i];
 
-    // aggiungo classi agli elementi
+//     // aggiungo classi agli elementi
     
-    item.classList.add('item');
-    descWrap.classList.add('desc-wrap');
-    li.classList.add('controls');
+//     item.classList.add('item');
+//     descWrap.classList.add('desc-wrap');
+//     li.classList.add('controls');
 
-    // metto gli elementi creati nel DOM
+//     // metto gli elementi creati nel DOM
     
-    slideWrapper.append(item);
-    item.append(img, descWrap);
-    descWrap.innerHTML = imgTitle + imgText;
+//     slideWrapper.append(item);
+//     item.append(img, descWrap);
+//     descWrap.innerHTML = imgTitle + imgText;
     
-    controlsWrapper.append(li);
-    li.append(imgControl);
+//     controlsWrapper.append(li);
+//     li.append(imgControl);
     
-}
+// }
 
 // recupero dal DOM gli elementi creati e inseriti e li metto in un array
 
