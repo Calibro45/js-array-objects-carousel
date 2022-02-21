@@ -81,10 +81,24 @@ slideObject.forEach((elememt) => {
 
     const slideContent = elememt;
     console.log(slideContent);
+
+    const slideCard = sliderItem(slideContent);
+    console.log(slideCard);
 })
 
 function sliderItem ( {immagine, titolo, descrizione} ) {
 
+    return `
+
+        <div class="item">
+            <img src="${immagine}" alt="">
+            <div class="desc-wrap">
+                <h2 class="title">${titolo}</h2>
+                <p class="subtitle">${descrizione}</p>
+            </div>
+        </div>
+
+    `
 }
 
 
