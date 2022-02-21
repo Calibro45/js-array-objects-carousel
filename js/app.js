@@ -84,6 +84,14 @@ slideObject.forEach((elememt) => {
 
     const slideCard = sliderItem(slideContent);
     console.log(slideCard);
+
+    const controlSlider = controlliSlider(slideContent);
+    console.log(controlSlider);
+
+    slideWrapper.innerHTML += slideCard;
+
+    controlsWrapper.innerHTML += controlSlider;
+    
 })
 
 function sliderItem ( {immagine, titolo, descrizione} ) {
@@ -98,6 +106,15 @@ function sliderItem ( {immagine, titolo, descrizione} ) {
             </div>
         </div>
 
+    `
+}
+
+function controlliSlider ( {immagine} ) {
+
+    return `
+        <li class="controls">
+            <img src="${immagine}" alt="">
+        </li>
     `
 }
 
