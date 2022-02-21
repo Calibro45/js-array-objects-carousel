@@ -53,6 +53,8 @@ const arrowDown = document.getElementsByClassName('arrow-down')[0];
 
 let activeElement = 0;
 
+// ciclo for each per creazione elementi del dom
+
 slideObject.forEach((elememt) => {
 
     const slideContent = elememt;
@@ -69,6 +71,8 @@ slideObject.forEach((elememt) => {
     controlsWrapper.innerHTML += controlSlider;
 
 })
+
+// fuzione per ricavare le proprieta degli oggetti da inserire
 
 function sliderItem ( {immagine, titolo, descrizione} ) {
 
@@ -118,7 +122,7 @@ arrowUp.addEventListener('click', decrementaSlide);
 
 previewSlide.forEach((element, index) => element.addEventListener('click', function(){
 
-    console.log(element);
+    //console.log(element);
 
     // tolgo active al preview
 
@@ -133,6 +137,8 @@ previewSlide.forEach((element, index) => element.addEventListener('click', funct
     addActive(itemsSlide, [activeElement], previewSlide);
 
 }))
+
+// funzioni relative al cambio slide e preview
 
 function incremetaSlide() {
 
