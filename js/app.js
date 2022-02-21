@@ -116,40 +116,23 @@ arrowDown.addEventListener('click', incremetaSlide);
 
 arrowUp.addEventListener('click', decrementaSlide);
 
-slider.addEventListener('click',slideCallBack);
+previewSlide.forEach((element, index) => element.addEventListener('click', function(){
 
-// setto il ciclo per le preview slides
+    console.log(element);
 
-// for (let i = 0; i < previewSlide.length; i++) {
+    // tolgo active al preview
 
-//     const controls = previewSlide[i];
-//     //console.log(controls);
+    removeActive(itemsSlide, [activeElement], previewSlide);
 
-//     // aggiungo event listener per le preview 
+     // setto contatore 
 
-//     controls.addEventListener('click', function() {
+    activeElement = index;
 
-//         // tolgo active al preview
+         // aggiungo active
 
-//         removeActive(itemsSlide, [activeElement], previewSlide);
+    addActive(itemsSlide, [activeElement], previewSlide);
 
-//         // setto contatore 
-
-//         activeElement = i
-
-//         // aggiungo active
-
-//         addActive(itemsSlide, [activeElement], previewSlide);
-
-//     })
-    
-// }
-
-function slideCallBack (event) {
-
-    console.log(event.target.closest('.controls'));
-    
-}
+}))
 
 function incremetaSlide() {
 
