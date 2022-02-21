@@ -1,53 +1,29 @@
-const items = [
-    'img/01.jpg',
-    'img/02.jpg',
-    'img/03.jpg',
-    'img/04.jpg',
-    'img/05.jpg'
-];
-
-const title = [
-    'Svezia',
-    'Svizzera',
-    'Gran Bretagna',
-    'Germania',
-    'Paradise'
-];
-
-const text = [
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
-    'Lorem ipsum',
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
-    'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
-];
-//console.log(items, title, text);
 
 const slideObject = [
     {
-        immagine: 'img/01.jpg',
-        titolo: 'Svezia',
-        descrizione: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+        immagine: 'img/rdr2.jpg',
+        titolo: 'Red Dead Redemption 2',
+        descrizione: 'Rivivi un avventura epica nel selvaggio west, in questo prequel targato Rockstar, e segui le vicende di Arthur e la sua banda.',
     },
     {
-        immagine: 'img/02.jpg',
-        titolo: 'Svizzera',
-        descrizione: 'Lorem ipsum',
+        immagine: 'img/sifu.jpg',
+        titolo: 'Sifu',
+        descrizione: 'Seconda opera del Team Slowcap, gettati nella mischia in questo action picchiaduro che metterà a dura prova la tua tenacia.',
     },
     {
-        immagine: 'img/03.jpg',
-        titolo: 'Gran Bretagna',
-        descrizione: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        immagine: 'img/spiderman.jpg',
+        titolo: 'Marvel Spiderman',
+        descrizione: 'Nulla da dire è Spiderman. indossa il costume e swinga fra i palazzi.',
     },
     {
-        immagine: 'img/04.jpg',
-        titolo: 'Germania',
-        descrizione: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam',
+        immagine: 'img/the-witcher-3.jpg',
+        titolo: 'The Witcher 3',
+        descrizione: 'Terzo capitolo che chiude l \' epica avventura dello strigo firmata CD Project.',
     },
     {
-        immagine: 'img/05.jpg',
-        titolo: 'Paradise',
-        descrizione: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam',
+        immagine: 'img/tlou2.jpg',
+        titolo: 'The last of us 2',
+        descrizione: 'Vivi un emozionante storia in questa seconda parte dell\' avventura di Ellie e Joel, incentrata su un cammino fatto di violenza e vendetta.',
     },
 ]
 console.log(slideObject);
@@ -80,18 +56,18 @@ let activeElement = 0;
 slideObject.forEach((elememt) => {
 
     const slideContent = elememt;
-    console.log(slideContent);
+    //console.log(slideContent);
 
     const slideCard = sliderItem(slideContent);
-    console.log(slideCard);
+    //console.log(slideCard);
 
     const controlSlider = controlliSlider(slideContent);
-    console.log(controlSlider);
+    //console.log(controlSlider);
 
     slideWrapper.innerHTML += slideCard;
 
     controlsWrapper.innerHTML += controlSlider;
-    
+
 })
 
 function sliderItem ( {immagine, titolo, descrizione} ) {
@@ -117,54 +93,6 @@ function controlliSlider ( {immagine} ) {
         </li>
     `
 }
-
-
-
-// creo il ciclo per le immagini del carusel
-
-
-
-// for (let i = 0; i < items.length; i++) {
-
-//     //console.log(title[i]);
-
-//     // creo elementi che andranno nel DOM 
-
-//     const item = document.createElement('div');
-//     //console.log(item);
-//     const img = document.createElement('img');
-//     //console.log(img);
-//     const descWrap = document.createElement('div');
-//     //console.log(descWrap);
-//     const imgTitle = `<h3 class="title">${title[i]}</h3>`;
-//     //console.log(imgTitle);
-//     const imgText = `<p class="subtitle">${text[i]}</p>`;
-//     //console.log(imgText);
-//     const li = document.createElement('li');
-//     //console.log(li);
-//     const imgControl = document.createElement('img');
-    
-//     // src img
-
-//     img.src = items[i];
-//     imgControl.src =items[i];
-
-//     // aggiungo classi agli elementi
-    
-//     item.classList.add('item');
-//     descWrap.classList.add('desc-wrap');
-//     li.classList.add('controls');
-
-//     // metto gli elementi creati nel DOM
-    
-//     slideWrapper.append(item);
-//     item.append(img, descWrap);
-//     descWrap.innerHTML = imgTitle + imgText;
-    
-//     controlsWrapper.append(li);
-//     li.append(imgControl);
-    
-// }
 
 // recupero dal DOM gli elementi creati e inseriti e li metto in un array
 
